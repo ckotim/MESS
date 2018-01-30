@@ -29,7 +29,7 @@ public abstract class ChessPiece {
 
     // get the position in x# format(a7, d6, j3)
     public String getPosition(){
-        return "" + (char)(row + 97) + column;
+        return "" + (char)(row + 97) + (char)(column + 49);
     }
 
     // set the position
@@ -42,7 +42,7 @@ public abstract class ChessPiece {
         // if match, then set
         if(mat.matches()){
             row = position.charAt(0) - 97;
-            column = position.charAt(1);
+            column = position.charAt(1) - 49;
         } else {
             throw new IllegalPositionException();
         }
